@@ -1,0 +1,11 @@
+Flask
+Flask_SQLAlchemy
+Flask_Script
+Flask_Migrate
+gevent
+Flask-Bootstrap
+requests
+html5lib
+bs4
+pymysql
+gunicorn==19.6.0

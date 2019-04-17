@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block styles %}
+{{super()}}
+<link href="{{url_for('static',filename='css/xscss.css',_external=True)}}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- row begin -->
+        <div class="col-md-offset-1 col-md-9 col-md-offset-1">
+            <div class="content_read">
+                <div class="box_con">
+                    <div class="bookname">
+                        <h1><p class="text-center">{{chapter_name}}</p></h1>
+                    </div>
+                    <div class="bottem1">
+                        <p class="text-center">
+                        {% if chapter_pre %}
+                        <a id="pager_prev" href="/fiction/?fic_id={{fic_id}}&chapter_id={{chapter_pre}}" target="_top" class="pre">上一章</a>
+                        {% else %}
+                        <a id="pager_prev" href="/list/{{fic_id}}" target="_top" class="pre">上一章</a>
+                        {% endif %}
+                        ← 
+                        <a id="pager_current" href="/list/{{fic_id}}" target="_top" title="" class="back">章节列表</a>
+                        → 
+                        {% if chapter_next %}
+                        <a id="pager_next" href="/fiction/?fic_id={{fic_id}}&chapter_id={{chapter_next}}" target="_top" class="next">下一章</a>
+                        {% else %}
+                        <a id="pager_next" href="/list/{{fic_id}}" target="_top" class="next">下一章</a>
+                        {% endif %}
+                    </p>
+                    </div>
+                    <div class="lm"></div>
+                    {{chapter_content|safe}}
+                    <div class="bottem1">
+                        <p class="text-center">
+                        {% if chapter_pre %}
+                        <a id="pager_prev" href="/fiction/?fic_id={{fic_id}}&chapter_id={{chapter_pre}}" target="_top" class="pre">上一章</a>
+                        {% else %}
+                        <a id="pager_prev" href="/list/{{fic_id}}" target="_top" class="pre">上一章</a>
+                        {% endif %}
+                        ← 
+                        <a id="pager_current" href="/list/{{fic_id}}" target="_top" title="" class="back">章节列表</a>
+                        → 
+                        {% if chapter_next %}
+                        <a id="pager_next" href="/fiction/?fic_id={{fic_id}}&chapter_id={{chapter_next}}" target="_top" class="next">下一章</a>
+                        {% else %}
+                        <a id="pager_next" href="/list/{{fic_id}}" target="_top" class="next">下一章</a>
+                        {% endif %}
+                    </p>
+                    </div>
+                </div>
+            </div>
+        </div>                              
+    <!-- row end -->
+    </div>
+</div>
+
+{{super()}}
+{% endblock%}

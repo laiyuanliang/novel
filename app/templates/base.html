@@ -1,0 +1,68 @@
+{% extends "bootstrap/base.html" %}
+{% block title %} 静谧角落 {% endblock title %}
+{%- block styles %}
+{{super()}}
+ <link href="{{url_for('static',filename='css/mycss.css',_external=True)}}" rel="stylesheet">
+ <link href="{{url_for('static',filename='css/xscss.css')}}" rel="stylesheet">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" href="{{url_for('static',filename='css/github-markdown.css')}}">
+ <style>
+    
+    html, body, .wrap { height:100%; }
+    .wrap {
+        height:auto; 
+        min-height:100%; 
+        _height:100%; 
+    }
+    .main { padding-bottom:80px; }
+    .footer { 
+        position:relative; 
+        height:80px; 
+        line-height: 80px; 
+        margin-top:-80px; 
+        background:#333; 
+        color:#fff; 
+        font-size:16px; 
+        text-align:center; 
+    }
+     .markdown-body {
+         box-sizing: border-box;
+         min-width: 200px;
+         max-width: 980px;
+         margin: 0 auto;
+         padding: 45px;
+     }
+ 
+     @media (max-width: 767px) {
+         .markdown-body {
+             padding: 15px;
+         }
+     }
+ </style>
+
+<div class="wrap">
+    <div class="main">
+
+{%- endblock styles %}
+
+{% block content %}
+
+    </div>
+</div>
+<!-- 底部begin -->
+<div class ="footer">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-offset-4 col-md-8">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">关于我们</a></li>
+                  <li ><a href="#">联系我们</a></li>
+                  <li><a href="#">广告服务</a></li>
+                  <li><a href="#">免责声明</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- 底部end -->
+{% endblock %}
