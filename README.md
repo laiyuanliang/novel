@@ -22,5 +22,3 @@ python manage.py db upgrade
 
 #运行项目
 ./start.sh
-
-git pull vs git fetch..... Bonjour01 
